@@ -192,91 +192,19 @@
     <!-- WIDGET DE CHAT (LIVE CHAT) -->
     <!-- ========================================== -->
     
-    <!-- Botão Flutuante de Chat -->
-    <button class="btn rounded-circle shadow-lg d-flex align-items-center justify-content-center" id="chatToggle" style="position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; z-index: 1050; background-color: #add8e6;">
-        <i class="bi bi-chat-dots-fill fs-3"></i>
-    </button>
-
-    <!-- Janela de Chat -->
-    <div class="card shadow-lg border-0" id="chatWindow" style="position: fixed; bottom: 95px; right: 25px; width: 320px; display: none; z-index: 1050; border-radius: 15px; overflow: hidden;">
-        <!-- Cabeçalho do Chat -->
-        <div class="card-header text-black d-flex justify-content-between align-items-center p-3 border-0" style="background-color: #add8e6;">
-            <div class="d-flex align-items-center">
-                <div class="bg-success rounded-circle me-2 shadow-sm" style="width: 10px; height: 10px;"></div>
-                <div>
-                    <strong class="mb-0 d-block lh-1">Apoio ao Cliente</strong>
-                    <small style="font-size: 0.70rem;">Assistente IA</small>
-                </div>
-            </div>
-            <button type="button" class="btn-close btn-close-white" id="closeChat" aria-label="Close"></button>
-        </div>
-        
-        <!-- Área de Mensagens -->
-        <div class="card-body bg-light" id="chatBody" style="height: 280px; overflow-y: auto;">
-            <!-- Mensagem inicial do assistente -->
-            <div class="d-flex mb-3">
-                <div class="bg-white border p-2 rounded-3 text-dark small shadow-sm" style="max-width: 85%; border-bottom-left-radius: 0 !important;">
-                    Olá! Sou da equipa TrueToHue. Em que o posso ajudar hoje?
-                </div>
-            </div>
-        </div>
-        
-        <!-- Área de Input -->
-        <div class="card-footer bg-white border-top p-2">
-            <form id="chatForm" class="d-flex" onsubmit="event.preventDefault(); enviarMensagem();">
-                <input type="text" class="form-control form-control-sm me-2 rounded-pill bg-light border-0 px-3" id="chatInput" placeholder="Escreva a sua mensagem..." required>
-                <button type="submit" class="btn btn-sm rounded-circle" style="width: 32px; height: 32px; padding: 0; background-color: #add8e6"><i class="bi bi-send-fill"></i></button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Script de funcionamento do Chat -->
-    <script>
-        const chatToggle = document.getElementById('chatToggle');
-        const chatWindow = document.getElementById('chatWindow');
-        const closeChat = document.getElementById('closeChat');
-        const chatBody = document.getElementById('chatBody');
-        const chatInput = document.getElementById('chatInput');
-
-        // Abrir/Fechar a janela ao clicar no botão flutuante
-        chatToggle.addEventListener('click', () => {
-            chatWindow.style.display = chatWindow.style.display === 'none' ? 'block' : 'none';
-        });
-
-        // Fechar no 'X'
-        closeChat.addEventListener('click', () => {
-            chatWindow.style.display = 'none';
-        });
-
-        // Função para simular o envio e a resposta
-        function enviarMensagem() {
-            const texto = chatInput.value.trim();
-            if (texto !== '') {
-                // 1. Adicionar o balão com a mensagem do utilizador (alinhada à direita)
-                chatBody.innerHTML += `
-                    <div class="d-flex mb-3 justify-content-end">
-                        <div class="bg-primary text-white p-2 rounded-3 small shadow-sm" style="max-width: 85%; border-bottom-right-radius: 0 !important;">
-                            ${texto}
-                        </div>
-                    </div>
-                `;
-                chatInput.value = ''; // Limpar a caixa de texto
-                chatBody.scrollTop = chatBody.scrollHeight; // Fazer scroll automático para o fundo
-
-                // 2. Simular uma resposta automática ao fim de 1.5 segundos
-                setTimeout(() => {
-                    chatBody.innerHTML += `
-                        <div class="d-flex mb-3">
-                            <div class="bg-white border p-2 rounded-3 text-dark small shadow-sm" style="max-width: 85%; border-bottom-left-radius: 0 !important;">
-                                <em>A sua mensagem foi recebida! Um dos nossos assistentes vai responder-lhe neste chat dentro de breves instantes.</em>
-                            </div>
-                        </div>
-                    `;
-                    chatBody.scrollTop = chatBody.scrollHeight;
-                }, 1500);
-            }
-        }
-    </script>	
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6af76dd5e24bed3c378b94c1/1k7b8a2q7';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 
     
 </body>
